@@ -1,0 +1,1 @@
+export {default as ArtLogo} from './artart.svg';

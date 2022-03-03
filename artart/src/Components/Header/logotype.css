@@ -1,0 +1,10 @@
+.artLogo{
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    padding: 0px 20px;
+    height: 44px;
+    background: linear-gradient(90deg, #84FAB0 0%, #8FD3F4 100%);
+    border-radius: 68px;
+    margin: 0 32px 0 0;
+}
