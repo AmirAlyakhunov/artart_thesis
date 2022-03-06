@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 72px;
+    height: var(--header-height);
     padding: var(--main-padding);
     position: sticky;
     z-index: 10;
