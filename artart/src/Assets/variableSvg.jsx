@@ -1,1 +1,3 @@
 export {default as ArtLogo} from './artart.svg';
+export {default as SearchIcon} from './Icons/Search.svg';
+export {default as MenuIcon} from './Icons/Menu.svg';

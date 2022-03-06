@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--buttons-height);
+    width: 48px;
+    border: none;
+
+    background: var(--main-background);
+    box-shadow: var(--main-shadow);
+    border-radius: var(--buttons-height);
+    margin: var(--main-iconBtn-margin);
+}
