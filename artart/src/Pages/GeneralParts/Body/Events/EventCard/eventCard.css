@@ -29,5 +29,5 @@
 }
 
 .eventCard-container:hover{
-    transform: scale(1.015);
+    transform: var(--main-transform);
 }

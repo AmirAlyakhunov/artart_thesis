@@ -20,7 +20,20 @@ const ArtistCard = ({post}) => {
                         </> : false
                 }
             </div>
-
+            <div className='artistCard-personImage-container'>
+                <img src={post.personpic} className='artistCard-personImage'/>
+            </div>
+            <div className='artistCard-description-container'>
+                <div className='artistCard-personData-container'>
+                    <div className='artistCard-personData-name'>{post.fullname}</div>
+                    <div className='artistCard-personData-tags-container'>
+                        {
+                            post.tags?.map(tag => <div className='artistCard-personData-tags' key={tag.id}>{tag.title}</div>)
+                        }
+                    </div>
+                </div>
+                <div className='artistCard-personData-coverText'>{post.description}</div>
+            </div>
         </Link>
     );
 };

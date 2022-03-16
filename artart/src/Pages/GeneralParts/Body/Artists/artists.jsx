@@ -34,7 +34,7 @@ const Artists = () => {
                     posts.map(post => <ArtistCard post={post} key={post.id}/>)
                 }
             </div>
-            <Button type={'secondary'}>Открыть полностью</Button>
+            <Button type={'secondary'} style={{marginTop: '24px'}}>Открыть полностью</Button>
         </div>
     );
 };
