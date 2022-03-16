@@ -1,0 +1,33 @@
+.eventCard-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    height: 248px;
+    border-radius: var(--main-border-radius);
+    text-decoration: none;
+    transition: var(--main-transition);
+}
+
+.eventCard-title{
+    font-family: var(--font-family);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    font-weight: var(--font-weight-main);
+    text-shadow: var(--text-shadow);
+    color: white;
+    margin-bottom: 8px;
+}
+
+.eventCard-date{
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: var(--body-line-height);
+    font-weight: var(--font-weight-main);
+    text-shadow: var(--text-shadow);
+    color: var(--main-background);
+}
+
+.eventCard-container:hover{
+    transform: scale(1.015);
+}

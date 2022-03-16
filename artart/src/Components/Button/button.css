@@ -39,7 +39,7 @@
     font-family: var(--font-family);
     font-size: var(--body-font-size);
     line-height: var(--body-line-height);
-    font-weight: 500;
+    font-weight: var(--font-weight-main);
     color: var(--primary);
 
     transition: var(--main-transition);

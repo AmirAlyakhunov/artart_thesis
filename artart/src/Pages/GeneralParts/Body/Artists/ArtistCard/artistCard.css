@@ -1,0 +1,19 @@
+.artistCard-container{
+    display: flex;
+    flex-direction: column;
+    height: 604px;
+
+    background-color: white;
+    box-shadow: var(--main-shadow);
+    border-radius: var(--main-border-radius);
+    overflow: hidden;
+}
+
+.artistCard-workImage{
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+    width: 100%;
+    height: 264px;
+}
+

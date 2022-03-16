@@ -1,4 +1,4 @@
-.events-container{
+.artists-container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,7 +6,7 @@
     margin-bottom: var(--mobile-parts-margin);
 }
 
-.events-cards-container{
+.artists-cards-container{
     display: grid;
     width: 100%;
     column-gap: 16px;

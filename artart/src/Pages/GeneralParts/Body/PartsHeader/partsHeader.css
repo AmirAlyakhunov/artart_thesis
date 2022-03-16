@@ -1,0 +1,18 @@
+.parts-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: var(--header-height);
+
+    background: white;
+    box-shadow: inset 0px -1px 0px var(--placeholder);
+
+    font-family: var(--font-family);
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+    font-weight: 500;
+    color: var(--primary);
+    margin-bottom: var(--partsHeader);
+}

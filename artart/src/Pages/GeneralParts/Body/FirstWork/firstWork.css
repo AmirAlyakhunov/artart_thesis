@@ -1,4 +1,4 @@
-.imgContainer{
+.fw-imgContainer{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -10,7 +10,7 @@
     margin-bottom: var(--mobile-parts-margin);
 }
 
-.title{
+.fw-title{
     font-family: var(--font-family);
     font-size: var(--h1-font-size);
     line-height: var(--h1-line-height);
@@ -18,7 +18,7 @@
     text-shadow: var(--text-shadow);
 }
 
-.authorContainer{
+.fw-authorContainer{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -33,12 +33,12 @@
     font-family: var(--font-family);
     font-size: var(--body-font-size);
     line-height: var(--body-line-height);
-    font-weight: 500;
+    font-weight: var(--font-weight-main);
     color: white;
     text-decoration: none;
 }
 
-.authorPic{
+.fw-authorPic{
     height: 28px;
     width: 28px;
     border-radius: 28px;

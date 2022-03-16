@@ -10,6 +10,8 @@
   --body-font-size: 18px;
   --body-line-height: 28px;
 
+  --font-weight-main: 500;
+
   /* Внутренние отступы */
   --main-padding: 0 16px;
   --button-padding: 0 40px;
@@ -17,13 +19,14 @@
   /* Внешние отступы */
   --main-iconBtn-margin: 0 12px;
   --mobile-parts-margin: 36px;
+  --partsHeader: 24px;
 
   /* Цвета */
   --primary: #1A1A1A;
   --primary-hover: #303030;
   --secondary: #666666;
   --placeholder: #E3E4E4;
-  --main-background: rgba(255, 255, 255, 0.75);
+  --main-background: rgba(255, 255, 255, 0.7);
   --loader: #E3E4E4;
 
   /* Тени */

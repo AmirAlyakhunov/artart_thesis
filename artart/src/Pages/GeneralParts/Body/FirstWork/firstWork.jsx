@@ -23,14 +23,14 @@ const FirstWork = () => {
     }
 
     return (
-        <Link to ={`/person/${post.id}`} className='imgContainer' style={{backgroundImage: `linear-gradient(179.92deg, rgba(0, 0, 0, 0.7) 0.07%, rgba(0, 0, 0, 0) 70.02%), url("${post.previewWork}")`,
+        <Link to ={`/person/${post.id}`} className='fw-imgContainer' style={{backgroundImage: `linear-gradient(179.92deg, rgba(0, 0, 0, 0.7) 0.07%, rgba(0, 0, 0, 0) 70.02%), url("${post.previewWork}")`,
             backgroundSize: 'cover', backgroundPositionX: 'center'}}>
             {
                 isLoading ? <Loader/> :
                     <>
-                        <h1 className='title'>{work.title}</h1>
-                        <div className='authorContainer'>
-                            <img src={post.personpic} alt='Author Pic' className='authorPic'/>
+                        <h1 className='fw-title'>{work.title}</h1>
+                        <div className='fw-authorContainer'>
+                            <img src={post.personpic} alt='Author Pic' className='fw-authorPic'/>
                             {post.fullname}
                         </div>
                     </>

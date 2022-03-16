@@ -1,20 +1,44 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
+import axios from 'axios';
 import './events.css';
-import Button from "../../../../Components/Button/button";
+import PartsHeader from '../PartsHeader/partsHeader';
+import EventCard from './EventCard/eventCard';
+import Button from '../../../../Components/Button/button';
+import Loader from '../../../../Components/Loader/loader';
 
 const Events = () => {
-    const navigate = useNavigate;
+    const [posts, setPosts] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    let navigate = useNavigate;
     function GoTo(){
-        navigate('/eventPage');
+        navigate('/kflkfldkfd');
+    }
+
+    useEffect(() =>{
+        fetchEvents()
+    }, []);
+    async function fetchEvents(){
+        setIsLoading(true);
+        const response = await axios.get('https://artartwebapp.herokuapp.com/event?take=6')
+        setPosts(response.data[0])
+        setIsLoading(false);
     }
 
     return (
         <div className='events-container'>
-            <div className='events-header'>
-                Мероприятия
-                <Button type={'tertiary'} onClick={GoTo}>Смотреть всё</Button>
-            </div>
+            {
+                isLoading ? <Loader/> :
+                    <>
+                        <PartsHeader children={'Мероприятия'} btnText={'Смотреть всё'} iconBtnStyle={{display: 'none'}} btnClickHandler={GoTo}/>
+                        <div className='events-cards-container'>
+                            {
+                                posts.map(post => <EventCard post={post} key={post.id}/>)
+                            }
+                        </div>
+                        <Button type={'secondary'} style={{marginTop: '24px'}} clickHandler={GoTo}>Открыть полностью</Button>
+                    </>
+            }
         </div>
     );
 };
