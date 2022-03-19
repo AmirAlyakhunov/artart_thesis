@@ -36,7 +36,7 @@ const Events = () => {
                                 posts.map(post => <EventCard post={post} key={post.id}/>)
                             }
                         </div>
-                        <Button type={'secondary'} style={{marginTop: '24px'}} clickHandler={GoTo}>Открыть полностью</Button>
+                        <Button type={'secondary'} style={{marginTop: '24px'}} clickHandler={GoTo}>Открыть мероприятия</Button>
                     </>
             }
         </div>

@@ -38,7 +38,8 @@
   --text-shadow: 1px 1px 1px rgba(25, 0, 0, 0.2);
 
   /* Высота */
-  --mobile-general-height: 456px;
+  --mobile-firstImg-height: 480px;
+  --desktop-firstImg-height: 600px;
   --buttons-height: 48px;
   --header-height: 72px;
 
@@ -117,20 +118,3 @@ article > * + * {
   margin-top: 1em;
 }
 
-/* Наследуем шрифты для инпутов и кнопок */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}

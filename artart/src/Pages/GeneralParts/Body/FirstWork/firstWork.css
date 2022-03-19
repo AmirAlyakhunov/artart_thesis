@@ -4,7 +4,7 @@
     align-items: flex-start;
     padding: 24px 16px;
     width: 100%;
-    height: var(--mobile-general-height);
+    height: var(--mobile-firstImg-height);
     border-radius: var(--main-border-radius);
     text-decoration: none;
     margin-bottom: var(--mobile-parts-margin);
@@ -45,5 +45,11 @@
     margin: 0 8px;
 }
 
+@media (min-width: 1000px){
+    .fw-imgContainer{
+        height: var(--desktop-firstImg-height);
+        background-size: contain !important;
+    }
+}
 
 
