@@ -1,6 +1,8 @@
 :root{
   /* Шрифт */
-  --font-family: 'Helvetica Neue', sans-serif;
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
 
   --h1-font-size: 34px;
   --h1-line-height: 40px;
@@ -29,6 +31,7 @@
   --primary: #1A1A1A;
   --primary-hover: #303030;
   --secondary: #666666;
+  --tertiary: #B3B3B3;
   --placeholder: #E3E4E4;
   --main-background: rgba(255, 255, 255, 0.7);
   --loader: #E3E4E4;
@@ -42,6 +45,9 @@
   --desktop-firstImg-height: 600px;
   --buttons-height: 48px;
   --header-height: 72px;
+
+  /* Ширина */
+  --max-width: 1280px;
 
   /* Скругление углов */
   --main-border-radius: 12px;

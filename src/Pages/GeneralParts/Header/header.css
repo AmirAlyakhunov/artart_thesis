@@ -1,16 +1,23 @@
 .header-container {
+    height: var(--header-height);
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    background: var(--main-background);
+    backdrop-filter: blur(16px);
+}
+
+.header-main-container{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: var(--header-height);
+    width: 100%;
+    max-width: var(--max-width);
+    height: 100%;
     padding: var(--main-padding);
-    position: sticky;
-    z-index: 10;
-    top: 0;
-
-    background: var(--main-background);
-    backdrop-filter: blur(16px);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btnIconContainer{
