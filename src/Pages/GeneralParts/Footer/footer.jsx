@@ -8,8 +8,8 @@ const Footer = () => {
         <div className='footer-container'>
             <div className='footer-link-container'>
                 <Link to={'/'} className='footer-link'>Главная</Link>
-                <Link to={'/'} className='footer-link'>Мероприятия</Link>
-                <Link to={'/'} className='footer-link'>Справочник</Link>
+                <Link to={'/events'} className='footer-link'>Мероприятия</Link>
+                <Link to={'/persons'} className='footer-link'>Справочник</Link>
                 <Link to={'/'} className='footer-link'>Мой профиль</Link>
             </div>
             <div className='footer-details-container'>

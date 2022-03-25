@@ -1,0 +1,5 @@
+.eventArticle-image {
+    width: 100%;
+    height: var(--mobile-firstImg-height);
+    border-radius: var(--main-border-radius);
+}
