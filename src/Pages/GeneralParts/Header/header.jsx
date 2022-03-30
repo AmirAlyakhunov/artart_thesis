@@ -5,6 +5,8 @@ import IconButton from "../../../Components/IconButtons/iconButton";
 import {SearchIcon, MenuIcon} from "../../../Assets/variableSvg";
 
 const Header = () => {
+
+
     return (
         <div className='header-container'>
             <div className='header-main-container'>

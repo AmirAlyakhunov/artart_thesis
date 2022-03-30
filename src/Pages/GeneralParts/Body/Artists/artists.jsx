@@ -22,11 +22,11 @@ const Artists = () => {
         setIsLoading(true);
         if(!cookies.access_token){
             const response = await PostGetData.getPersons()
-            setPosts(response.data[0])
+            setPosts(response.data['persons'])
         }
         else{
             const response = await PostGetData.getPersons(cookies.access_token)
-            setPosts(response.data[0])
+            setPosts(response.data['persons'])
         }
         setIsLoading(false);
     }

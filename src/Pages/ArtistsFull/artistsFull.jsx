@@ -18,11 +18,11 @@ const ArtistsFull = () => {
         setIsLoading(true);
         if(!cookies.access_token){
             const response = await PostGetData.getAllPersons()
-            setPosts(response.data[0])
+            setPosts(response.data['persons'])
         }
         else{
             const response = await PostGetData.getAllPersons(cookies.access_token)
-            setPosts(response.data[0])
+            setPosts(response.data['persons'])
         }
         setIsLoading(false);
     }

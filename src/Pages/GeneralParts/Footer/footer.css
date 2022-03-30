@@ -26,6 +26,11 @@
     font-weight: var(--font-weight-main);
     color: var(--tertiary);
     text-decoration: none;
+    transition: var(--main-transition);
+}
+
+.footer-link:hover{
+    color: white;
 }
 
 .footer-details-container{
