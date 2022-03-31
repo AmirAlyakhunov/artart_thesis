@@ -1,7 +1,7 @@
 import React from 'react';
 import './partsHeader.css';
-import Button from "../../../../Components/Button/button";
-import IconButton from "../../../../Components/IconButtons/iconButton";
+import Button from "../Button/button";
+import IconButton from "../IconButtons/iconButton";
 
 const PartsHeader = ({style, children, btnText, btnStyle, iconBtnStyle, iconBtnIcon, btnClickHandler}) => {
     return (

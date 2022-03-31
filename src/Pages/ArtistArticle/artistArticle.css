@@ -1,8 +1,126 @@
-.artistArticle-personPic{
+.artistArticle-biography{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: var(--partsHeader);
+}
+
+.artistArticle-biography-personPic{
     box-sizing: border-box;
     object-fit: cover;
     width: 100%;
     height: var(--mobile-firstImg-height);
     border-radius: var(--main-border-radius);
     margin-bottom: 16px;
+}
+
+.artistArticle-biography-details{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 0 0 24px;
+    box-shadow: inset 0px -1px 0px var(--placeholder);
+}
+
+.artistArticle-biography-details-name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 16px;
+
+    font-family: var(--font-family);
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+    font-weight: var(--font-weight-main);
+    color: var(--primary);
+}
+
+.artistArticle-biography-description{
+    font-family: var(--font-family);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    color: var(--primary);
+}
+
+.artistArticle-works{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.artistArticle-works-work-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.artistArticle-works-work-header{
+    font-family: var(--font-family);
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+    font-weight: var(--font-weight-main);
+    color: var(--primary);
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.artistArticle-works-work-description{
+    font-family: var(--font-family);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    color: var(--primary);
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.artistArticle-works-work-videoIframe{
+    width: 100%;
+    height: 224px;
+    border-style: none;
+    border-radius: var(--main-border-radius);
+}
+
+.artistArticle-socNetworks{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    font-family: var(--font-family);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    color: var(--primary);
+}
+
+.artistArticle-socNetworks-link-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 16px;
+    transition: var(--main-transition);
+}
+
+.artistArticle-socNetworks-link-container:hover{
+    opacity: .85;
+}
+
+.artistArticle-socNetworks-link-icon{
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.artistArticle-socNetworks-link-a{
+    text-decoration: none;
+    font-weight: var(--font-weight-main);
+    color: var(--primary);
+}
+
+@media (min-width: 744px){
+    .artistArticle-works-work-videoIframe{
+        height: var(--mobile-firstImg-height);
+    }
 }

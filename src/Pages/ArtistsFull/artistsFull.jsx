@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Loader from "../../Components/Loader/loader";
-import PartsHeader from "../GeneralParts/Body/PartsHeader/partsHeader";
+import PartsHeader from "../../Components/PartsHeader/partsHeader";
 import {useCookies} from "react-cookie";
 import PostGetData from "../../API/postGetData";
 import ArtistCard from "../GeneralParts/Body/Artists/ArtistCard/artistCard";

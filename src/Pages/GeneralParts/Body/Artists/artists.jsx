@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './artists.css';
-import PartsHeader from '../PartsHeader/partsHeader';
+import PartsHeader from '../../../../Components/PartsHeader/partsHeader';
 import ArtistCard from './ArtistCard/artistCard';
 import Loader from '../../../../Components/Loader/loader';
 import PostGetData from "../../../../API/postGetData";
