@@ -3,6 +3,8 @@ import EventsFull from "../Pages/EventsFull/eventsFull";
 import ArtistsFull from "../Pages/ArtistsFull/artistsFull";
 import EventArticle from "../Pages/EventArticle/eventArticle";
 import ArtistArticle from "../Pages/ArtistArticle/artistArticle";
+import Login from "../Pages/Login/login";
+import Signup from "../Pages/Singup/signup";
 
 export const public_route = [
     {path: '/', element: <Home/>},
@@ -10,6 +12,8 @@ export const public_route = [
     {path: '/persons', element: <ArtistsFull/>},
     {path: '/event/:id', element: <EventArticle/>},
     {path: '/person/:id', element: <ArtistArticle/>},
+    {path: '/login', element: <Login/>},
+    {path: '/signup', element: <Signup/>},
 ];
 
 export const private_route = [

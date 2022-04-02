@@ -2,10 +2,10 @@ import React, {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import './events.css';
-import PartsHeader from '../../../../Components/PartsHeader/partsHeader';
+import PartsHeader from '../../../../../Components/PartsHeader/partsHeader';
 import EventCard from './EventCard/eventCard';
-import Button from '../../../../Components/Button/button';
-import Loader from '../../../../Components/Loader/loader';
+import Button from '../../../../../Components/Button/button';
+import Loader from '../../../../../Components/Loader/loader';
 
 const Events = () => {
     const [posts, setPosts] = useState([]);

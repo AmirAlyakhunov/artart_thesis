@@ -10,6 +10,9 @@
   --h2-font-size: 26px;
   --h2-line-height: 30px;
 
+  --h3-font-size: 22px;
+  --h3-line-height: 28px;
+
   --tags-font-size: 24px;
   --tags-line-height: 30px;
 
@@ -32,7 +35,9 @@
   --primary-hover: #303030;
   --secondary: #666666;
   --tertiary: #B3B3B3;
-  --placeholder: #E3E4E4;
+  --quaternary: #E3E4E4;
+  --placeholder: #919191;
+  --field-background: rgba(239, 239, 239, 0.7);
   --main-background: rgba(255, 255, 255, 0.7);
 
   /* Тени */

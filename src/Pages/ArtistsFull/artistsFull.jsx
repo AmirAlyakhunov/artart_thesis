@@ -3,7 +3,7 @@ import Loader from "../../Components/Loader/loader";
 import PartsHeader from "../../Components/PartsHeader/partsHeader";
 import {useCookies} from "react-cookie";
 import PostGetData from "../../API/postGetData";
-import ArtistCard from "../GeneralParts/Body/Artists/ArtistCard/artistCard";
+import ArtistCard from "../Home/GeneralParts/Body/Artists/ArtistCard/artistCard";
 import Button from "../../Components/Button/button";
 
 const ArtistsFull = () => {

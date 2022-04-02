@@ -3,11 +3,11 @@ import './logotype.css';
 import {ArtLogo} from "../../Assets/variableSvg";
 import {Link} from "react-router-dom";
 
-const Logotype = () => {
+const Logotype = ({style}) => {
     return (
-        <Link to='/'>
+        <Link to='/' style={style}>
             <div className='artLogo'>
-                <img src={ArtLogo} alt="ArtLogo"/>
+                <img src={ArtLogo} alt="ArtLogo" style={{maxWidth: 'none'}}/>
             </div>
         </Link>
     );

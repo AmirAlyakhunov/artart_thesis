@@ -1,9 +1,19 @@
 .artLogo{
     cursor: pointer;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     padding: 0px 20px;
     height: 48px;
-    background: linear-gradient(90deg, #84FAB0 0%, #8FD3F4 100%);
-    border-radius: 68px;
+    border-radius: 48px;
+
+    box-shadow: 0 -150px 70px -120px #84FAB0 inset,
+    0 -220px 70px -120px  #8FD3F4 inset;
+    animation: background 50s infinite alternate;
+}
+
+@keyframes background {
+    50% {
+        box-shadow: 0 -140px 70px -120px #8FD3F4 inset,
+        0 -210px 70px -120px #84FAB0 inset;
+    }
 }

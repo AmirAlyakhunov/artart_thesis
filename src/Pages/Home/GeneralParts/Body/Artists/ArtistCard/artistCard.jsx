@@ -1,6 +1,6 @@
 import React from 'react';
 import './artistCard.css';
-import LikeTag from "../../../../../Components/likeTag/likeTag";
+import LikeTag from "../../../../../../Components/likeTag/likeTag";
 import {Link, useNavigate} from "react-router-dom";
 import {useCookies} from "react-cookie";
 

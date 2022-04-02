@@ -9,14 +9,14 @@
 .loader,
 .loader:before,
 .loader:after {
-    background: var(--placeholder);
+    background: var(--quaternary);
     -webkit-animation: load1 1s infinite ease-in-out;
     animation: load1 1s infinite ease-in-out;
     width: 1em;
     height: 4em;
 }
 .loader {
-    color: var(--placeholder);
+    color: var(--quaternary);
     text-indent: -9999em;
     position: relative;
     font-size: 11px;

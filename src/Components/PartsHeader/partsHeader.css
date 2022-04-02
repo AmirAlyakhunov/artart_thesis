@@ -7,7 +7,7 @@
     height: var(--header-height);
 
     background: white;
-    box-shadow: inset 0px -1px 0px var(--placeholder);
+    box-shadow: inset 0px -1px 0px var(--quaternary);
 
     font-family: var(--font-family);
     font-size: var(--h2-font-size);

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './firstWork.css';
-import Loader from "../../../../Components/Loader/loader";
+import Loader from "../../../../../Components/Loader/loader";
 import {Link} from "react-router-dom";
 import axios from 'axios';
 

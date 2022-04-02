@@ -1,0 +1,38 @@
+.searchResultRow-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 88px;
+    padding: 0 16px;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar-corner{
+    border-radius: 13px;
+}
+
+.searchResultRow-artistName-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 16px;
+}
+
+.searchResultRow-artistName{
+    font-family: var(--font-family);
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+    color: var(--primary);
+    font-weight: var(--font-weight-main);
+}
+
+.searchResultRow-artistName-tags{
+    font-family: var(--font-family);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    background: -webkit-linear-gradient(45deg, #9795F0 0%, #FBC8D4 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 8px;
+}

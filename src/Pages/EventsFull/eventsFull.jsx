@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Loader from "../../Components/Loader/loader";
 import PartsHeader from "../../Components/PartsHeader/partsHeader";
-import EventCard from "../GeneralParts/Body/Events/EventCard/eventCard";
+import EventCard from "../Home/GeneralParts/Body/Events/EventCard/eventCard";
 
 const EventsFull = () => {
     const [posts, setPosts] = useState([]);

@@ -57,7 +57,7 @@ const ArtistArticle = () => {
                             <div className='artistArticle-biography-details'>
                                 <div className='artistArticle-biography-details-name'>
                                     {post.fullname}
-                                    <div className='btnIconContainer'>
+                                    <div className='artistArticle-btnIconContainer'>
                                         <IconButton icon={LikeIconUnfilled}/>
                                         <IconButton icon={ShareIcon} style={{margin: '0'}}/>
                                     </div>
@@ -81,15 +81,15 @@ const ArtistArticle = () => {
                                             {work.title}
                                         </div>
                                         {
-                                            work.description != null ? <div className='artistArticle-works-work-description'>{work.description}</div> : false
+                                            work.description ? <div className='artistArticle-works-work-description'>{work.description}</div> : false
                                         }
                                         {
-                                            work.pic != null ?
+                                            work.pic ?
                                                 <>
                                                     {
                                                         work.pic.map((art) => <img src={art} className='artistArticle-biography-personPic'/>)
                                                     }
-                                                </> : work.video != null ?
+                                                </> : work.video ?
                                                 <>
                                                     {
                                                         work.video.map((artVideo) => <iframe src={artVideo} className='artistArticle-works-work-videoIframe' scrolling='no'/>)
@@ -101,27 +101,27 @@ const ArtistArticle = () => {
                             }
                         </div>
                         {
-                            post.socNetworks != null ?
+                            post.socNetworks ?
                                 <>
                                     <PartsHeader children={'Ссылки на артиста'} iconBtnStyle={{display: 'none'}} btnStyle={{display: 'none'}}/>
                                     <div className='artistArticle-socNetworks'>
                                         Подробнее с художником можно познакомиться по источникам ниже:
                                         {
-                                            post.socNetworks.vk !=null ?
+                                            post.socNetworks.vk ?
                                                 <div className='artistArticle-socNetworks-link-container'>
                                                     <img src={VkIcon} className='artistArticle-socNetworks-link-icon'/>
                                                     <a href={post.socNetworks.vk} className='artistArticle-socNetworks-link-a'>ВКонтакте</a>
                                                 </div> : false
                                         }
                                         {
-                                            post.socNetworks.instagram !=null ?
+                                            post.socNetworks.instagram ?
                                                 <div className='artistArticle-socNetworks-link-container'>
                                                     <img src={InstagramIcon} className='artistArticle-socNetworks-link-icon'/>
                                                     <a href={post.socNetworks.instagram} className='artistArticle-socNetworks-link-a'>Инстаграм</a>
                                                 </div> : false
                                         }
                                         {
-                                            post.socNetworks.site !=null ?
+                                            post.socNetworks.site ?
                                                 <div className='artistArticle-socNetworks-link-container'>
                                                     <img src={WebIcon} className='artistArticle-socNetworks-link-icon'/>
                                                     <a href={post.socNetworks.site} className='artistArticle-socNetworks-link-a'>Веб-сайт</a>

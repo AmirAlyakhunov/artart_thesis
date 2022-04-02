@@ -6,6 +6,7 @@
     background-color: var(--primary);
     padding: var(--button-padding);
     height: var(--buttons-height);
+    white-space: nowrap;
     border-radius: var(--buttons-height);
     border: none;
     box-sizing: border-box;
@@ -31,8 +32,9 @@
     background-color: white;
     padding: var(--button-padding);
     height: var(--buttons-height);
+    white-space: nowrap;
     border-radius: var(--buttons-height);
-    border: 1px solid var(--placeholder);
+    border: 1px solid var(--quaternary);
     box-sizing: border-box;
     cursor: pointer;
 
@@ -54,9 +56,10 @@
     justify-content: center;
     align-items: center;
     height: var(--buttons-height);
+    white-space: nowrap;
     border: none;
     box-sizing: border-box;
-    background-color: white;
+    background-color: transparent;
     cursor: pointer;
 
     font-family: var(--font-family);

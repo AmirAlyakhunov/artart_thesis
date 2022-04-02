@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import './artists.css';
-import PartsHeader from '../../../../Components/PartsHeader/partsHeader';
+import PartsHeader from '../../../../../Components/PartsHeader/partsHeader';
 import ArtistCard from './ArtistCard/artistCard';
-import Loader from '../../../../Components/Loader/loader';
-import PostGetData from "../../../../API/postGetData";
+import Loader from '../../../../../Components/Loader/loader';
+import PostGetData from "../../../../../API/postGetData";
 import {useCookies} from "react-cookie";
-import Button from "../../../../Components/Button/button";
+import Button from "../../../../../Components/Button/button";
 import {useNavigate} from "react-router-dom";
 
 const Artists = () => {
@@ -39,7 +39,7 @@ const Artists = () => {
                         <PartsHeader children={'Справочник'} iconBtnStyle={{display: 'none'}} btnText={'Смотреть всё'} btnClickHandler={() => redirect('/persons')}/>
                         <div className='artists-cards-container'>
                             {
-                                posts.map(post => <ArtistCard post={post} key={post.id}/>)
+                                posts.map((post) => <ArtistCard post={post} key={post.id}/>)
                             }
                         </div>
                         <Button type={'secondary'} style={{marginTop: '24px'}} clickHandler={() => redirect('/persons')}>Открыть справочник</Button>

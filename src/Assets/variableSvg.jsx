@@ -8,4 +8,7 @@ export {default as ShareIcon} from './Icons/Share.svg';
 export {default as VkIcon} from './Icons/Vk.svg';
 export {default as InstagramIcon} from './Icons/Instagram.svg';
 export {default as WebIcon} from './Icons/Web.svg';
+export {default as EmailIcon} from './Icons/Email.svg';
+export {default as PasswordIcon} from './Icons/Password.svg';
+export {default as UserNameIcon} from './Icons/UserName.svg';
 

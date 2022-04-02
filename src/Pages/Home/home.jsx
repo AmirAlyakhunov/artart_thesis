@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import './home.css';
-import FirstWork from "../GeneralParts/Body/FirstWork/firstWork";
-import Events from "../GeneralParts/Body/Events/events";
-import Artists from "../GeneralParts/Body/Artists/artists";
+import FirstWork from "./GeneralParts/Body/FirstWork/firstWork";
+import Events from "./GeneralParts/Body/Events/events";
+import Artists from "./GeneralParts/Body/Artists/artists";
 
 const Home = () => {
     return (

@@ -5,6 +5,11 @@
     margin-bottom: var(--partsHeader);
 }
 
+.artistArticle-btnIconContainer{
+    display: flex;
+    flex-direction: row;
+}
+
 .artistArticle-biography-personPic{
     box-sizing: border-box;
     object-fit: cover;
@@ -20,7 +25,7 @@
     width: 100%;
     margin-bottom: 16px;
     padding: 0 0 24px;
-    box-shadow: inset 0px -1px 0px var(--placeholder);
+    box-shadow: inset 0px -1px 0px var(--quaternary);
 }
 
 .artistArticle-biography-details-name{

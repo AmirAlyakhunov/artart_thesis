@@ -47,7 +47,7 @@
     flex-direction: column;
     padding: 0 24px 24px;
     width: 100%;
-    box-shadow: inset 0px -1px 0px var(--placeholder);
+    box-shadow: inset 0px -1px 0px var(--quaternary);
 }
 
 .artistCard-personData-name{

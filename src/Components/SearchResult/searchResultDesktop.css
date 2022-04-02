@@ -1,0 +1,33 @@
+.searchResultDesktop-container{
+    position: absolute;
+    z-index: 200;
+    top: 72px;
+    width: 464px;
+    height: 520px;
+    padding-top: 16px;
+    margin: 0 16px;
+
+    background-color: white;
+    border-radius: var(--main-border-radius);
+    border: 0px solid rgba(255, 255, 255, 0.1);
+    box-shadow: rgb(4 4 5 / 20%) 0px 7px 36px -8px;
+
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.searchResultDesktop-close{
+    position: sticky;
+    box-sizing: border-box;
+    bottom: 0;
+    top: calc(100% - 64px);
+    z-index: 201;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 8px 0;
+}
+
