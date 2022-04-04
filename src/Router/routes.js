@@ -5,6 +5,7 @@ import EventArticle from "../Pages/EventArticle/eventArticle";
 import ArtistArticle from "../Pages/ArtistArticle/artistArticle";
 import Login from "../Pages/Login/login";
 import Signup from "../Pages/Singup/signup";
+import Profile from "../Pages/Profile/profile";
 
 export const public_route = [
     {path: '/', element: <Home/>},
@@ -22,4 +23,5 @@ export const private_route = [
     {path: '/persons', element: <ArtistsFull/>},
     {path: '/event/:id', element: <EventArticle/>},
     {path: '/person/:id', element: <ArtistArticle/>},
+    {path: '/user/me', element: <Profile/>},
 ];

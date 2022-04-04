@@ -1,0 +1,11 @@
+.errorMessage-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    font-family: var(--font-family);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    text-align: center;
+    color: var(--error);
+}

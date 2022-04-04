@@ -39,6 +39,7 @@
   --placeholder: #919191;
   --field-background: rgba(239, 239, 239, 0.7);
   --main-background: rgba(255, 255, 255, 0.7);
+  --error: #F00000;
 
   /* Тени */
   --main-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);

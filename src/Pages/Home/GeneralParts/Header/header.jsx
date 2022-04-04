@@ -10,6 +10,7 @@ import {useCookies} from "react-cookie";
 import SearchResultDesktop from "../../../../Components/SearchResult/searchResultDesktop";
 import SearchResultMobile from "../../../../Components/SearchResult/SearchResultMobile/searchResultMobile";
 import MenuMobile from "../../../MenuMobile/menuMobile";
+import PostGetData from "../../../../API/postGetData";
 
 const Header = () => {
     const [isSearch, setIsSearch] = useState(false);
@@ -25,7 +26,8 @@ const Header = () => {
     }
     const [value, setValue] = useState({query:''})
 
-    const cookies  = useCookies(['access_token']);
+    const [cookies, setCookie, removeCookie]  = useCookies(['access_token', 'refresh_token']);
+    const [user, setUser] = useState({});
     const redirect = useNavigate();
 
     const [isSearchMobileOpen, setIsSearchMobileOpen] = useState(false);
@@ -42,6 +44,20 @@ const Header = () => {
     const handleMenuMobileClose = () => {
         setIsMenuMobileOpen(false);
     }
+
+    async function Logout(){
+        const response = await PostGetData.postRefresh(cookies.refresh_token)
+        setCookie('access_token', response.data, {
+            maxAge: 30 * 24 * 60 * 60,
+            path: '/',
+        })
+        if (cookies) {
+            removeCookie("access_token", {path: '/'})
+            removeCookie("refresh_token", {path: '/'})
+        }
+        redirect ('/login', {replace: true})
+    }
+
     return (
         <>
             {
@@ -65,8 +81,8 @@ const Header = () => {
                         {
                             cookies.access_token ?
                                 <>
-                                    <Button type={'tertiary'} style={{marginRight: '16px'}}>Мой профиль</Button>
-                                    <Button type={'secondary'}>Выйти</Button>
+                                    <Button type={'tertiary'} style={{marginRight: '16px'}} clickHandler={() => redirect('user/me')}>Мой профиль</Button>
+                                    <Button type={'secondary'} clickHandler={Logout}>Выйти</Button>
                                 </> :
                                 <>
                                     <Button type={'tertiary'} style={{marginRight: '16px'}} clickHandler={() => redirect('/login')}>Мой профиль</Button>

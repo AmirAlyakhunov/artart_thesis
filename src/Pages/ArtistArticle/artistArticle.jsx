@@ -84,7 +84,7 @@ const ArtistArticle = () => {
                                             cookies.access_token ?
                                                 <>
                                                 {
-                                                    post?.liked === false ? <IconButton icon={LikeIcon} clickHandler={setLike}/> : <IconButton icon={LikeIconUnfilled} clickHandler={setLike}/>
+                                                    post?.liked === true ? <IconButton icon={LikeIcon} style={{backgroundColor: 'var(--quaternary'}} clickHandler={setLike}/> : <IconButton icon={LikeIconUnfilled} clickHandler={setLike}/>
                                                 }
                                                 </> : <IconButton icon={LikeIconUnfilled} clickHandler={() => redirect('/login')}/>
                                         }
