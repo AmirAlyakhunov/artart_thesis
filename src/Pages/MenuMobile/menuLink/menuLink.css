@@ -1,0 +1,10 @@
+.menu-link{
+    font-family: var(--font-family);
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+    font-weight: var(--font-weight-main);
+    color: var(--primary);
+
+    margin-bottom: 12px;
+    text-decoration: none;
+}

@@ -18,6 +18,7 @@
     font-weight: 500;
     color: white;
 
+    flex-shrink: 0;
     transition: var(--main-transition);
 }
 .button-primary:hover{
@@ -44,6 +45,7 @@
     font-weight: var(--font-weight-main);
     color: var(--primary);
 
+    flex-shrink: 0;
     transition: var(--main-transition);
 }
 .button-secondary:hover{
@@ -68,6 +70,7 @@
     font-weight: 500;
     color: var(--secondary);
 
+    flex-shrink: 0;
     transition: var(--main-transition);
 }
 .button-tertiary:hover{

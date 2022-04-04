@@ -11,4 +11,6 @@ export {default as WebIcon} from './Icons/Web.svg';
 export {default as EmailIcon} from './Icons/Email.svg';
 export {default as PasswordIcon} from './Icons/Password.svg';
 export {default as UserNameIcon} from './Icons/UserName.svg';
+export {default as CalloutSuccessIcon} from './Icons/CalloutSuccess.svg';
+export {default as CloseIcon} from './Icons/Close.svg';
 

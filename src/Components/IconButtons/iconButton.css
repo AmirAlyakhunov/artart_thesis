@@ -6,6 +6,7 @@
     width: 48px;
     border: none;
     cursor: pointer;
+    flex-shrink: 0;
 
     background: var(--main-background);
     box-shadow: var(--main-shadow);
