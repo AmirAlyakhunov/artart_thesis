@@ -10,7 +10,7 @@ import ErrorMessage from "../../Components/ErrorMessage/errorMessage";
 
 const Signup = () => {
     const redirect = useNavigate();
-    const url ='https://artartwebapp.herokuapp.com/auth/login';
+    const url ='https://artartwebapp.herokuapp.com/auth/register';
     const [cookies, setCookie] = useCookies(['access_token', 'refresh_token']);
     const [errorMessage, setErrorMessage] = useState('');
 
