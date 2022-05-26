@@ -18,7 +18,7 @@ const Events = () => {
     }, []);
     async function fetchEvents(){
         setIsLoading(true);
-        const response = await axios.get('https://artartwebapp.herokuapp.com/event?take=6')
+        const response = await axios.get('https://artartwebapp.herokuapp.com/api/event?take=6')
         setPosts(response.data['events'])
         setIsLoading(false);
     }

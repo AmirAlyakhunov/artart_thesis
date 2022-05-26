@@ -7,6 +7,8 @@
     font-weight: var(--font-weight-main);
     color: var(--primary);
     margin-bottom: 16px;
+    padding-bottom: 16px;
+    box-shadow: inset 0px -1px 0px var(--quaternary);
 }
 
 .eventArticle-image-container {
@@ -49,4 +51,11 @@
     font-weight: var(--font-weight-main);
     color: var(--primary);
     margin-right: 6px;
+}
+
+@media (min-width: 744px){
+    .eventArticle-image{
+        object-fit: contain;
+        border-radius: 0px;
+    }
 }

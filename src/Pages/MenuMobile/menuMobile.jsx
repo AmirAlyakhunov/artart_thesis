@@ -41,9 +41,9 @@ const MenuMobile = ({clickHandler}) => {
                     }
                 </div>
                 {
-                    cookies.access_token ? <Button type={'secondary'} clickHandler={Logout} style={{marginBottom: '8px'}}>Выйти</Button> :
+                    cookies.access_token ? <Button type={'secondary'} clickHandler={Logout} style={{marginBottom: '8px', width: '100%'}}>Выйти</Button> :
                         <>
-                            <Button type={'primary'} clickHandler={() => redirect('/login')} style={{marginBottom: '8px'}}>Войти в аккаунт</Button>
+                            <Button type={'primary'} clickHandler={() => redirect('/login')} style={{marginBottom: '8px', width: '100%'}}>Войти в аккаунт</Button>
                             <Button type={'tertiary'} clickHandler={() => redirect('/signup')}>Зарегистрироваться</Button>
                         </>
                 }

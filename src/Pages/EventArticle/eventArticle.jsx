@@ -33,7 +33,7 @@ const EventArticle = () => {
                         </div>
                         <div className='eventArticle-title'>{post.title}</div>
                         <div className='eventArticle-description'>{post.description}</div>
-                        <div className='eventArticle-eventDetails'><strong className='eventArticle-eventDetails-strong'>Дата проведения:</strong>{post.date}</div>
+                        <div className='eventArticle-eventDetails'><strong className='eventArticle-eventDetails-strong'>Дата проведения:</strong>{post.startDate} - {post.endDate}</div>
                         <div className='eventArticle-eventDetails'><strong className='eventArticle-eventDetails-strong'>Место проведения:</strong>{post.place}</div>
                     </>
             }

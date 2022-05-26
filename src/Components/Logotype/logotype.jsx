@@ -1,6 +1,6 @@
 import React from 'react';
 import './logotype.css';
-import {ArtLogo} from "../../Assets/variableSvg";
+import {ArtLogo, ArtLogoShort} from "../../Assets/variableSvg";
 import {Link} from "react-router-dom";
 
 const Logotype = ({style}) => {

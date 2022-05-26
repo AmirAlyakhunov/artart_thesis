@@ -1,3 +1,10 @@
+.fw-main-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: var(--mobile-parts-margin);
+}
+
 .fw-imgContainer{
     display: flex;
     flex-direction: column;
@@ -7,13 +14,52 @@
     height: var(--mobile-firstImg-height);
     border-radius: var(--main-border-radius);
     text-decoration: none;
-    margin-bottom: var(--mobile-parts-margin);
+    margin-bottom: 16px;
+    transition: var(--main-transition);
+}
+.fw-imgContainer:hover{
+    transform: var(--main-transform);
+}
+
+.fw-container-secondary{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+}
+.fw-container-secondary::-webkit-scrollbar { display: none; }
+
+.fw-imgContainer-secondary{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 12px;
+    width: 56%;
+    min-width: 56%;
+    height: 202px;
+    border-radius: var(--main-border-radius);
+    text-decoration: none;
+    margin-right: 16px;
+    transition: var(--main-transition);
+}
+.fw-imgContainer-secondary:hover{
+    transform: var(--main-transform);
 }
 
 .fw-title{
     font-family: var(--font-family);
     font-size: var(--h1-font-size);
     line-height: var(--h1-line-height);
+    color: white;
+    text-shadow: var(--text-shadow);
+}
+
+.fw-title-secondary{
+    font-family: var(--font-family);
+    font-size: var(--body-font-size);
+    line-height: 24px;
+    font-weight: var(--font-weight-main);
     color: white;
     text-shadow: var(--text-shadow);
 }
@@ -36,6 +82,15 @@
     font-weight: var(--font-weight-main);
     color: white;
     text-decoration: none;
+    text-shadow: var(--text-shadow);
+}
+
+.fw-authorContainer-secondary{
+    font-family: var(--font-family);
+    font-size: 16px;
+
+    color: var(--main-background);
+    text-decoration: none;
 }
 
 .fw-authorPic{
@@ -46,9 +101,29 @@
 }
 
 @media (min-width: 1000px){
+    .fw-main-container{
+        flex-direction: row;
+        width: 100%;
+    }
     .fw-imgContainer{
         height: var(--desktop-firstImg-height);
+        width: 50%;
+        margin-right: 16px;
         background-size: contain !important;
+    }
+    .fw-container-secondary{
+        display: grid;
+        width: 50%;
+        height: var(--desktop-firstImg-height);
+        column-gap: 16px;
+        row-gap: 16px;
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    }
+    .fw-imgContainer-secondary{
+        width: 100%;
+        height: 100%;
+        margin-right: 0px;
+        padding: 24px 16px;
     }
 }
 

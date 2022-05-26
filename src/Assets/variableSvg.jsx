@@ -1,4 +1,5 @@
 export {default as ArtLogo} from './artart.svg';
+export {default as ArtLogoShort} from './artartShort.svg';
 export {default as ArtLogoFooter} from './artart_footer.svg';
 export {default as SearchIcon} from './Icons/Search.svg';
 export {default as MenuIcon} from './Icons/Menu.svg';
@@ -13,4 +14,6 @@ export {default as PasswordIcon} from './Icons/Password.svg';
 export {default as UserNameIcon} from './Icons/UserName.svg';
 export {default as CalloutSuccessIcon} from './Icons/CalloutSuccess.svg';
 export {default as CloseIcon} from './Icons/Close.svg';
+export {default as DarkThemeIcon} from './Icons/Moon.svg';
+export {default as LightThemeIcon} from './Icons/Sun.svg';
 

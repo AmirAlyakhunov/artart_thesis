@@ -128,4 +128,8 @@
     .artistArticle-works-work-videoIframe{
         height: var(--mobile-firstImg-height);
     }
+    .artistArticle-biography-personPic{
+        object-fit: contain;
+        border-radius: 0px;
+    }
 }
