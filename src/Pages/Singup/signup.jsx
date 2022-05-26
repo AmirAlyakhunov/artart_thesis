@@ -42,14 +42,6 @@ const Signup = () => {
             fingerprint: data.fingerprint
         }, {headers: {'Content-Type': 'application/json'}})
             .then(function (response){
-                setCookie('access_token', response.data.accessToken, {
-                    maxAge: 30 * 24 * 60 * 60,
-                    path: '/',
-                })
-                setCookie('refresh_token', response.data.refreshToken, {
-                    maxAge: 30 * 24 * 60 * 60,
-                    path: '/',
-                })
                 if(response.status === 201) redirect('/emailConfirm', {replace: true})
             }).catch((err) => {
             setErrorMessage(err.response.data?.message)

@@ -13,7 +13,7 @@ const MenuMobile = ({clickHandler}) => {
     const [cookies, setCookie, removeCookie]  = useCookies(['access_token', 'refresh_token']);
     const redirect = useNavigate();
     async function Logout(){
-        const response = await PostGetData.postRefresh(cookies.refresh_token)
+        const response = await PostGetData.postLogout(cookies.access_token)
         setCookie('access_token', response.data, {
             maxAge: 30 * 24 * 60 * 60,
             path: '/',

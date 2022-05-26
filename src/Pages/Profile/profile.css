@@ -1,3 +1,10 @@
+.profile-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 .profile-userpic{
     width: 160px;
     height: 160px;
@@ -25,9 +32,30 @@
     margin-bottom: 36px;
 }
 
+.artists-cards-container-empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-family: var(--font-family);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    color: var(--tertiary);
+    text-align: center;
+    margin-top: var(--mobile-parts-margin);
+    margin-bottom: var(--mobile-parts-margin);
+}
+
 @media (min-width: 1280px){
     .profile-userpic{
         width: 240px;
         height: 240px;
+    }
+    .profile-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 32%;
     }
 }

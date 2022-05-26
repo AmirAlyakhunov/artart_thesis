@@ -17,6 +17,19 @@
     overflow-y: auto;
 }
 
+.searchResultDesktop-container-noResult{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 64px);
+    font-family: var(--font-family);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    color: var(--tertiary);
+}
+
 .searchResultDesktop-close{
     position: sticky;
     box-sizing: border-box;

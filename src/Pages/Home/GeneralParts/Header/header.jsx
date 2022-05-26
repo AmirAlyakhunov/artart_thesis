@@ -46,7 +46,7 @@ const Header = () => {
     }
 
     async function Logout(){
-        const response = await PostGetData.postRefresh(cookies.refresh_token)
+        const response = await PostGetData.postLogout(cookies.access_token)
         setCookie('access_token', response.data, {
             maxAge: 30 * 24 * 60 * 60,
             path: '/',
@@ -57,15 +57,6 @@ const Header = () => {
         }
         redirect ('/login', {replace: true})
     }
-    //
-    // const [darkTheme, setDarkTheme] = useState(false);
-    // const handleSetDarkTheme = () => {
-    //     setDarkTheme(true);
-    // }
-    // const handleSetLightTheme = () => {
-    //     setDarkTheme(false);
-    // }
-
     return (
         <>
             {
@@ -74,7 +65,6 @@ const Header = () => {
             {
                 isMenuMobileOpen === true ? <MenuMobile clickHandler={handleMenuMobileClose}/> : false
             }
-
             <div className='header-container'>
                 <div className='header-main-container'>
                     <Logotype/>
@@ -97,18 +87,13 @@ const Header = () => {
                                     <Button type={'primary'} clickHandler={() => redirect('/login')}>Войти</Button>
                                 </>
                         }
-                        {/*{*/}
-                        {/*    darkTheme === false ? <IconButton icon={DarkThemeIcon} style={{marginRight: '0', marginLeft: '16px'}} clickHandler={handleSetDarkTheme}/> : <IconButton icon={LightThemeIcon} style={{marginRight: '0', marginLeft: '16px'}} clickHandler={handleSetLightTheme}/>*/}
-                        {/*}*/}
                     </div>
 
                     <div className='btnIconContainer'>
                         <IconButton icon={SearchIcon} clickHandler={handleSearchMobileOpen}/>
-                        {/*{*/}
-                        {/*    darkTheme === false ? <IconButton icon={DarkThemeIcon} style={{marginLeft: '0'}} clickHandler={handleSetDarkTheme}/> : <IconButton icon={LightThemeIcon} style={{marginLeft: '0'}} clickHandler={handleSetLightTheme}/>*/}
-                        {/*}*/}
                         <IconButton icon={MenuIcon} style={{margin: '0'}} clickHandler={handleMenuMobileOpen}/>
                     </div>
+
                 </div>
             </div>
         </>

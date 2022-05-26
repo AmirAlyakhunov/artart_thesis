@@ -2,6 +2,7 @@ import React from 'react';
 import Logotype from "../../Components/Logotype/logotype";
 import Button from "../../Components/Button/button";
 import {useNavigate} from "react-router-dom";
+import {MailSentIcon} from "../../Assets/variableSvg";
 
 const EmailConfirm = () => {
     const redirect = useNavigate();
@@ -10,10 +11,11 @@ const EmailConfirm = () => {
         <div className='login-container'>
             <div className='login-header'>
                 <Logotype/>
-                <Button type={'tertiary'} clickHandler={() => redirect('/')}>Главная</Button>
+                <Button type={'tertiary'} clickHandler={() => redirect('/signup')}>Регистрация</Button>
             </div>
             <div className='login-main-container' style={{height: '100%', justifyContent: 'center'}}>
-                <div className='login-main-title' style={{textAlign: 'center'}}>На вашу почту отправлено письмо для подтверждения email</div>
+                <img src={MailSentIcon}/>
+                <div className='login-main-title' style={{textAlign: 'center', marginTop: '16px'}}>На вашу почту отправлено письмо для подтверждения email</div>
             </div>
         </div>
     );

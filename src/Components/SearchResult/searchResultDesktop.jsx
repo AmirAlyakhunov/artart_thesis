@@ -4,6 +4,7 @@ import PostGetData from "../../API/postGetData";
 import Loader from "../Loader/loader";
 import SearchResultRow from "../SearchResultRow/searchResultRow";
 import Button from "../Button/button";
+import {EmojiSadIcon} from "../../Assets/variableSvg";
 
 const SearchResultDesktop = ({onClick, value, toClose}) => {
     const [posts, setPosts] = useState([]);
@@ -29,7 +30,11 @@ const SearchResultDesktop = ({onClick, value, toClose}) => {
                 isLoading ? <Loader/> :
                     <>
                         {
-                            filteredPerson.map((post) => <SearchResultRow post={post} key={post.id} onClick={onClick}/>)
+                            filteredPerson.length !== 0 ? filteredPerson.map((post) => <SearchResultRow post={post} key={post.id} onClick={onClick}/>) :
+                                <div className='searchResultDesktop-container-noResult'>
+                                    <img src={EmojiSadIcon} style={{marginBottom: '16px'}}/>
+                                    К сожалению, не удалось никого найти
+                                </div>
                         }
                     </>
             }

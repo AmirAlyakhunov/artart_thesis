@@ -1,13 +1,13 @@
 import axios from "axios";
 import FingerprintJS from "@fingerprintjs/fingerprintjs-pro";
 
+let fpJs;
 const fpPromise = FingerprintJS.load({
     apiKey: 'tc1PlQCmQfk2W9xC0bEz', region: 'eu'
 })
-let fpJs;
 fpPromise
     .then(fp => fp.get())
-    .then(result => { fpJs = result.visitorId})
+    .then(result => {fpJs = result.visitorId})
 
 export default class PostGetData {
 
@@ -66,9 +66,19 @@ export default class PostGetData {
         return response;
     }
 
+    static async postLogout(accessToken){
+        const AuthStr = 'Bearer ' + accessToken;
+        const response = await axios.post('https://artartwebapp.herokuapp.com/api/auth/logout', {fingerprint: fpJs},{'headers': {'Authorization': AuthStr}})
+        return response;
+    }
+
     static async postRefresh(refreshToken) {
+        const fpPromise = await FingerprintJS.load({
+            apiKey: 'tc1PlQCmQfk2W9xC0bEz', region: 'eu'
+        })
+        const result = await fpPromise.get()
         const AuthStr = 'Bearer ' + refreshToken;
-        const response = await axios.post('https://artartwebapp.herokuapp.com/api/auth/refresh', undefined,{'headers': {'Authorization': AuthStr}, params: {f:fpJs}})
+        const response = await axios.post('https://artartwebapp.herokuapp.com/api/auth/refresh?f='+result.visitorId, undefined,{'headers': {'Authorization': AuthStr}})
         return response;
     }
 
@@ -83,8 +93,9 @@ export default class PostGetData {
         return response;
     }
 
-    static async patchResetPassword (resetToken){
-        const response = await axios.patch('https://artartwebapp.herokuapp.com/api/user/password/reset/'+ resetToken)
+    static async patchUserName (accessToken, name){
+        const AuthStr = 'Bearer ' + accessToken;
+        const response = axios.patch('https://artartwebapp.herokuapp.com/api/user/me',{name},{'headers': {'Authorization': AuthStr}}).then(result => result).catch(err => err.response)
         return response;
     }
 
