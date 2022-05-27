@@ -73,22 +73,22 @@ const ProfileEdit = () => {
 
     return (
         <div className='main-container' style={{alignItems: 'center', width: '100%'}}>
+            <PartsHeader children={'Изменение профиля'} iconBtnStyle={{display: 'none'}} btnStyle={{display: 'none'}}/>
             <ScrollToTop/>
             {
                 isLoading ? <Loader/> :
                     <>
                         <div className='profile-container'>
-                            <PartsHeader children={'Изменение профиля'} iconBtnStyle={{display: 'none'}} btnStyle={{display: 'none'}}/>
-                            <img src={user.userpic} className='profile-userpic'/>
-                            <form className='login-main-container' onSubmit={(e)=>submit(e)}>
+                            <img src={user.userpic} className='profile-userpic' style={{marginTop: '36px'}}/>
+                            <form className='login-main-container' style={{padding: '36px 0'}} onSubmit={(e)=>submit(e)}>
                                 <Field onChange={(e) => handle(e)} id={'email'} value={userUpdate.email} type={'text'} src={EmailIcon} placeholder={'Электронная почта'} style={{marginBottom: '16px'}}/>
                                 <Field onChange={(e) => handle(e)} id={'name'} value={userUpdate.name} type={'text'} src={UserNameIcon} placeholder={'Псевдоним'} style={{marginBottom: '16px'}}/>
                                 <Button type={'primary'} style={{marginBottom: '16px', width: '100%'}}>Сохранить изменения</Button>
-                                {
-                                    errorMessage ? <ErrorMessage>{errorMessage}</ErrorMessage> : false
-                                }
+                                <Button type={'secondary'} style={{width: '100%'}} clickHandler={() => redirect('/user/me')}>Отменить изменения</Button>
                             </form>
-                            <Button type={'secondary'} clickHandler={() => redirect('/user/me')}>Отменить изменения</Button>
+                            {
+                                errorMessage ? <ErrorMessage>Ошибка внесения изменений: {errorMessage}</ErrorMessage> : false
+                            }
                         </div>
 
                     </>
