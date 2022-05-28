@@ -69,6 +69,11 @@ const ProfileEdit = () => {
             if (response.status !== 200) setErrorMessage(response.data?.message)
             else redirect ('/user/me')
         }
+        if (user.email !== userUpdate.email){
+            const response = await PostGetData.sendUpdateEmailLink(cookies.access_token, userUpdate.email)
+            if (response.status !== 200) setErrorMessage(response.data?.message)
+            else redirect ('/emailConfirm')
+        }
     }
 
     return (

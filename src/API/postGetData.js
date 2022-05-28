@@ -99,6 +99,18 @@ export default class PostGetData {
         return response;
     }
 
+    static async sendUpdateEmailLink (accessToken, email){
+        const AuthStr = 'Bearer ' + accessToken;
+        const response = axios.patch('https://artartwebapp.herokuapp.com/api/user/me/updateEmail',{email},{'headers': {'Authorization': AuthStr}})
+        return response;
+    }
+
+    static async updateEmail (accessToken, updateToken){
+        const AuthStr = 'Bearer ' + accessToken;
+        const response = axios.patch('https://artartwebapp.herokuapp.com/api/user/me/updateEmail/'+ updateToken,undefined,{'headers': {'Authorization': AuthStr}})
+        return response;
+    }
+
     static async getLikedArtist(accessToken) {
         const AuthStr = 'Bearer ' + accessToken;
         const response = await axios.get('https://artartwebapp.herokuapp.com/api/person/favorite',{'headers': {'Authorization': AuthStr}})

@@ -13,6 +13,7 @@ import EmailChecked from "../Pages/EmailConfirm/emailChecked";
 import ResetPasswordEmailSent from "../Pages/ResetPassword/resetPasswordEmailSent";
 import ResetPasswordConfirm from "../Pages/ResetPassword/resetPasswordConfirm";
 import ProfileEdit from "../Pages/ProfileEdit/profileEdit";
+import EmailUpdateChecked from "../Pages/EmailConfirm/emailUpdateChecked";
 
 export const public_route = [
     {path: '/', element: <Home/>},
@@ -25,6 +26,7 @@ export const public_route = [
     {path: '/resetPassword', element: <ResetPassword/>},
     {path: '/emailConfirm', element: <EmailConfirm/>},
     {path: '/emailConfirm/:token', element: <EmailChecked/>},
+    {path: '/emailUpdateChecked/:token', element: <EmailUpdateChecked/>},
     {path: '/resetPasswordEmailSent', element: <ResetPasswordEmailSent/>},
     {path: '/resetPasswordConfirm/:token', element: <ResetPasswordConfirm/>},
     {path: '*', element: <NotFound/>},
@@ -39,6 +41,7 @@ export const private_route = [
     {path: '/user/me', element: <Profile/>},
     {path: '/emailConfirm', element: <EmailConfirm/>},
     {path: '/emailConfirm/:token', element: <EmailChecked/>},
+    {path: '/emailUpdateChecked/:token', element: <EmailUpdateChecked/>},
     {path: '/user/me/edit', element: <ProfileEdit/>},
     {path: '*', element: <NotFound/>},
 ];

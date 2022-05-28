@@ -6,13 +6,13 @@ import PostGetData from '../../API/postGetData';
 import Loader from "../../Components/Loader/loader";
 import IconButton from "../../Components/IconButtons/iconButton";
 import {
-    CalloutSuccessIcon,
+    CalloutSuccessIcon, FoundationIcon,
     InstagramIcon,
     LikeIcon,
     LikeIconUnfilled,
-    ShareIcon,
+    ShareIcon, TelegramIcon,
     VkIcon,
-    WebIcon
+    WebIcon, YandexMusicIcon
 } from "../../Assets/variableSvg";
 import PartsHeader from "../../Components/PartsHeader/partsHeader";
 import ScrollToTop from "../../ScrollFunction/scrollToTop";
@@ -132,9 +132,23 @@ const ArtistArticle = () => {
                         {
                             post.socNetworks ?
                                 <>
-                                    <PartsHeader children={'Ссылки на артиста'} iconBtnStyle={{display: 'none'}} btnStyle={{display: 'none'}}/>
+                                    <PartsHeader children={'Ссылки на сети'} iconBtnStyle={{display: 'none'}} btnStyle={{display: 'none'}}/>
                                     <div className='artistArticle-socNetworks'>
-                                        Подробнее с художником можно познакомиться по источникам ниже:
+                                        Подробнее с артистом можно познакомиться по источникам ниже:
+                                        {
+                                            post.socNetworks.foundation ?
+                                                <div className='artistArticle-socNetworks-link-container'>
+                                                    <img src={FoundationIcon} className='artistArticle-socNetworks-link-icon'/>
+                                                    <a href={post.socNetworks.foundation} className='artistArticle-socNetworks-link-a'>Foundation</a>
+                                                </div> : false
+                                        }
+                                        {
+                                            post.socNetworks.yandexMusic ?
+                                                <div className='artistArticle-socNetworks-link-container'>
+                                                    <img src={YandexMusicIcon} className='artistArticle-socNetworks-link-icon'/>
+                                                    <a href={post.socNetworks.yandexMusic} className='artistArticle-socNetworks-link-a'>Яндекс Музыка</a>
+                                                </div> : false
+                                        }
                                         {
                                             post.socNetworks.vk ?
                                                 <div className='artistArticle-socNetworks-link-container'>
@@ -143,10 +157,10 @@ const ArtistArticle = () => {
                                                 </div> : false
                                         }
                                         {
-                                            post.socNetworks.instagram ?
+                                            post.socNetworks.telegram ?
                                                 <div className='artistArticle-socNetworks-link-container'>
-                                                    <img src={InstagramIcon} className='artistArticle-socNetworks-link-icon'/>
-                                                    <a href={post.socNetworks.instagram} className='artistArticle-socNetworks-link-a'>Инстаграм</a>
+                                                    <img src={TelegramIcon} className='artistArticle-socNetworks-link-icon'/>
+                                                    <a href={post.socNetworks.telegram} className='artistArticle-socNetworks-link-a'>Telegram</a>
                                                 </div> : false
                                         }
                                         {

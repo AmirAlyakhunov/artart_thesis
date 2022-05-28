@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './searchResultMobile.css';
 import IconButton from "../../IconButtons/iconButton";
-import {CloseIcon, EmojiSadIcon, SearchIcon} from "../../../Assets/variableSvg";
+import {CloseIcon, EmojiGhost, EmojiSadIcon, SearchIcon} from "../../../Assets/variableSvg";
 import Field from "../../Field/field";
 import Loader from "../../Loader/loader";
 import SearchResultRow from "../../SearchResultRow/searchResultRow";
@@ -46,7 +46,7 @@ const SearchResultMobile = ({clickHandler}) => {
                         {
                             filteredPerson.length !== 0 ? filteredPerson.map((post) => <SearchResultRow post={post} key={post.id} onClick={handleSearchGoTo} style={{marginBottom: '8px'}}/>) :
                                 <div className='searchResultDesktop-container-noResult'>
-                                    <img src={EmojiSadIcon} style={{marginBottom: '16px'}}/>
+                                    <img src={EmojiGhost} style={{marginBottom: '16px'}}/>
                                     К сожалению, не удалось никого найти
                                 </div>
                         }
