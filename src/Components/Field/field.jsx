@@ -1,7 +1,7 @@
 import React from 'react';
 import './field.css';
 
-const Field = ({placeholder, type, src, id, onChange, value, style, onFocus, onBlur}) => {
+const Field = ({placeholder, type, src, id, onChange, value, style, onFocus, onBlur, accept}) => {
     return (
         <div className='field-container'style={style}>
             <input
@@ -11,6 +11,7 @@ const Field = ({placeholder, type, src, id, onChange, value, style, onFocus, onB
                 onFocus={onFocus}
                 onBlur={onBlur}
                 id={id}
+                accept={accept}
                 type={type}
                 placeholder={placeholder}
             />

@@ -7,11 +7,11 @@ import ScrollToTop from "../../ScrollFunction/scrollToTop";
 import Loader from "../../Components/Loader/loader";
 import Button from "../../Components/Button/button";
 import PartsHeader from "../../Components/PartsHeader/partsHeader";
-import {EmailIcon, EmptyImgIcon, PasswordIcon, UserNameIcon} from "../../Assets/variableSvg";
-import ArtistCard from "../Home/GeneralParts/Body/Artists/ArtistCard/artistCard";
+import {EditIcon, EmailIcon, UserNameIcon} from "../../Assets/variableSvg";
 import Field from "../../Components/Field/field";
 import ErrorMessage from "../../Components/ErrorMessage/errorMessage";
-import axios from "axios";
+import IconButton from "../../Components/IconButtons/iconButton";
+import UserPicChangeWin from "../../Components/UserPicChangeWin/userPicChangeWin";
 
 const ProfileEdit = () => {
     const redirect = useNavigate();
@@ -20,11 +20,21 @@ const ProfileEdit = () => {
     const [user, setUser] = useState({
         email: '',
         name: '',
+        userpic: ''
     });
     const [userUpdate, setUserUpdate] = useState({
         email: '',
         name: '',
+        userpic: ''
     });
+
+    const [file, setFile] = useState();
+    const [openWin, setOpenWin] = useState(false);
+
+    function openCloseWin(){
+        if (openWin !== true) setOpenWin(true)
+        else setOpenWin(false)
+    }
 
     const [isLoading, setIsLoading] = useState(false);
     useEffect(() =>{
@@ -57,9 +67,15 @@ const ProfileEdit = () => {
     }
 
     function handle(e){
+        e.preventDefault();
         const newData = {...userUpdate};
         newData[e.target.id] = e.target.value;
         setUserUpdate(newData);
+        if (e.target.files[0]) {
+            user.userpic = URL.createObjectURL(e.target.files[0]);
+            setFile(e.target.files[0]);
+            setOpenWin(false)
+        }
     }
     async function submit(e) {
         e.preventDefault();
@@ -74,6 +90,24 @@ const ProfileEdit = () => {
             if (response.status !== 200) setErrorMessage(response.data?.message)
             else redirect ('/emailConfirm')
         }
+        if (file !== undefined && user.userpic !== 'https://storage.yandexcloud.net/artart/userpic/userpic.png'){
+            const formData = new FormData();
+            formData.append('file', file);
+            const response = await PostGetData.patchUserPic(cookies.access_token, formData)
+            if (response.status !== 200) setErrorMessage(response.data?.message)
+            else redirect ('/user/me')
+        }
+        else{
+            if (user.userpic === 'https://storage.yandexcloud.net/artart/userpic/userpic.png'){
+                await PostGetData.deleteUserPic(cookies.access_token);
+                redirect ('/user/me')
+            }
+        }
+    }
+
+    function deleteUsPic(){
+        user.userpic = 'https://storage.yandexcloud.net/artart/userpic/userpic.png';
+        setOpenWin(false);
     }
 
     return (
@@ -81,10 +115,16 @@ const ProfileEdit = () => {
             <PartsHeader children={'Изменение профиля'} iconBtnStyle={{display: 'none'}} btnStyle={{display: 'none'}}/>
             <ScrollToTop/>
             {
+                openWin ? <UserPicChangeWin onClickCancel={openCloseWin} onChangeImg={(e) => handle(e)} onClickDeleteImg={deleteUsPic}/> : false
+            }
+            {
                 isLoading ? <Loader/> :
                     <>
                         <div className='profile-container'>
-                            <img src={user.userpic} className='profile-userpic' style={{marginTop: '36px'}}/>
+                            <div className='profile-userpic-edit'>
+                                <IconButton icon={EditIcon} style={{position: 'fixed'}} clickHandler={openCloseWin}/>
+                                <img src={user?.userpic} className='profile-userpic' style={{marginTop: '36px'}}/>
+                            </div>
                             <form className='login-main-container' style={{padding: '36px 0'}} onSubmit={(e)=>submit(e)}>
                                 <Field onChange={(e) => handle(e)} id={'email'} value={userUpdate.email} type={'text'} src={EmailIcon} placeholder={'Электронная почта'} style={{marginBottom: '16px'}}/>
                                 <Field onChange={(e) => handle(e)} id={'name'} value={userUpdate.name} type={'text'} src={UserNameIcon} placeholder={'Псевдоним'} style={{marginBottom: '16px'}}/>

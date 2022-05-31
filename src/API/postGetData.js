@@ -99,6 +99,18 @@ export default class PostGetData {
         return response;
     }
 
+    static async patchUserPic (accessToken, formData) {
+        const AuthStr = 'Bearer ' + accessToken;
+        const response = axios.patch('https://artartwebapp.herokuapp.com/api/user/me/updateUserpic',formData,{'headers': {'Authorization': AuthStr,'Content-type': 'multipart/form-data; boundary=formData'}}).then(result => result).catch(err => err.response)
+        return response;
+    }
+
+    static async deleteUserPic (accessToken) {
+        const AuthStr = 'Bearer ' + accessToken;
+        const response = axios.patch('https://artartwebapp.herokuapp.com/api/user/me/deleteUserpic',undefined,{'headers': {'Authorization': AuthStr}}).then(result => result).catch(err => err.response)
+        return response;
+    }
+
     static async sendUpdateEmailLink (accessToken, email){
         const AuthStr = 'Bearer ' + accessToken;
         const response = axios.patch('https://artartwebapp.herokuapp.com/api/user/me/updateEmail',{email},{'headers': {'Authorization': AuthStr}})

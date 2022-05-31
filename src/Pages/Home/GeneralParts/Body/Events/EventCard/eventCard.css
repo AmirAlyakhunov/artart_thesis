@@ -19,7 +19,7 @@
     margin-bottom: 8px;
 }
 
-.eventCard-date{
+.eventCard-place{
     font-family: var(--font-family);
     font-size: 16px;
     line-height: var(--body-line-height);

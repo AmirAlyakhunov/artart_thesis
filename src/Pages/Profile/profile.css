@@ -12,6 +12,16 @@
     margin-bottom: 16px;
 }
 
+.profile-userpic-edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 160px;
+    border-radius: 160px;
+    margin-bottom: 16px;
+}
+
 .profile-username{
     font-family: var(--font-family);
     font-size: var(--h2-font-size);
@@ -47,8 +57,12 @@
     margin-bottom: var(--mobile-parts-margin);
 }
 
-@media (min-width: 1280px){
+@media (min-width: 744px){
     .profile-userpic{
+        width: 240px;
+        height: 240px;
+    }
+    .profile-userpic-edit{
         width: 240px;
         height: 240px;
     }

@@ -24,5 +24,6 @@ export {default as FavoriteBigIcon} from './Icons/FavouriteBig.svg';
 export {default as EmptyImgIcon} from './Icons/EmptyImg.svg';
 export {default as EmojiSadIcon} from './Icons/EmojiSad.svg';
 export {default as EmojiGhost} from './Icons/Ghost.svg';
+export {default as EditIcon} from './Icons/Edit.svg';
 
 
