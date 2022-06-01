@@ -122,7 +122,7 @@ const ProfileEdit = () => {
                     <>
                         <div className='profile-container'>
                             <div className='profile-userpic-edit'>
-                                <IconButton icon={EditIcon} style={{position: 'fixed'}} clickHandler={openCloseWin}/>
+                                <IconButton icon={EditIcon} style={{position: 'absolute'}} clickHandler={openCloseWin}/>
                                 <img src={user?.userpic} className='profile-userpic' style={{marginTop: '36px'}}/>
                             </div>
                             <form className='login-main-container' style={{padding: '36px 0'}} onSubmit={(e)=>submit(e)}>
