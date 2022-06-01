@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
-import PostGetData from "../../API/postGetData";
+import ApiData from "../../API/apiData";
 import SuccessWin from "../../Components/SuccessResetWin/successWin";
 import {useCookies} from "react-cookie";
 
@@ -14,7 +14,7 @@ const EmailUpdateChecked = () => {
     }, [])
 
     async function fetchEvent() {
-        const response = await PostGetData.updateEmail(cookies.access_token, params.token)
+        const response = await ApiData.updateEmail(cookies.access_token, params.token)
         if(response.status === 200)
         {
             setSuccessChecked(true)

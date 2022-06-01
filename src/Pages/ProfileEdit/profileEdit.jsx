@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {useCookies} from "react-cookie";
 import {Buffer} from "buffer";
-import PostGetData from "../../API/postGetData";
+import ApiData from "../../API/apiData";
 import ScrollToTop from "../../ScrollFunction/scrollToTop";
 import Loader from "../../Components/Loader/loader";
 import Button from "../../Components/Button/button";
@@ -48,12 +48,12 @@ const ProfileEdit = () => {
         let newDate = new Date(expDate.exp * 1000);
         let today = new Date()
         if (today < newDate) {
-            const response = await PostGetData.getUser(cookies.access_token)
+            const response = await ApiData.getUser(cookies.access_token)
             setUser(response.data)
             setUserUpdate(response.data)
         }
         else {
-            const response = await PostGetData.postRefresh(cookies.refresh_token)
+            const response = await ApiData.postRefresh(cookies.refresh_token)
             setCookie('access_token', response.data.accessToken, {
                 maxAge: 30 * 24 * 60 * 60,
                 path: '/',
@@ -81,25 +81,25 @@ const ProfileEdit = () => {
         e.preventDefault();
         if (user.name !== userUpdate.name)
         {
-            const response = await PostGetData.patchUserName(cookies.access_token, userUpdate.name)
+            const response = await ApiData.patchUserName(cookies.access_token, userUpdate.name)
             if (response.status !== 200) setErrorMessage(response.data?.message)
             else redirect ('/user/me')
         }
         if (user.email !== userUpdate.email){
-            const response = await PostGetData.sendUpdateEmailLink(cookies.access_token, userUpdate.email)
+            const response = await ApiData.sendUpdateEmailLink(cookies.access_token, userUpdate.email)
             if (response.status !== 200) setErrorMessage(response.data?.message)
             else redirect ('/emailConfirm')
         }
         if (file !== undefined && user.userpic !== 'https://storage.yandexcloud.net/artart/userpic/userpic.png'){
             const formData = new FormData();
             formData.append('file', file);
-            const response = await PostGetData.patchUserPic(cookies.access_token, formData)
+            const response = await ApiData.patchUserPic(cookies.access_token, formData)
             if (response.status !== 200) setErrorMessage(response.data?.message)
             else redirect ('/user/me')
         }
         else{
             if (user.userpic === 'https://storage.yandexcloud.net/artart/userpic/userpic.png'){
-                await PostGetData.deleteUserPic(cookies.access_token);
+                await ApiData.deleteUserPic(cookies.access_token);
                 redirect ('/user/me')
             }
         }

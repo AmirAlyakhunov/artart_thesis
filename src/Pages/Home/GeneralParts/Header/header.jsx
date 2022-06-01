@@ -10,7 +10,7 @@ import {useCookies} from "react-cookie";
 import SearchResultDesktop from "../../../../Components/SearchResult/searchResultDesktop";
 import SearchResultMobile from "../../../../Components/SearchResult/SearchResultMobile/searchResultMobile";
 import MenuMobile from "../../../MenuMobile/menuMobile";
-import PostGetData from "../../../../API/postGetData";
+import ApiData from "../../../../API/apiData";
 
 const Header = () => {
     const [isSearch, setIsSearch] = useState(false);
@@ -46,7 +46,7 @@ const Header = () => {
     }
 
     async function Logout(){
-        const response = await PostGetData.postLogout(cookies.access_token)
+        const response = await ApiData.postLogout(cookies.access_token)
         setCookie('access_token', response.data, {
             maxAge: 30 * 24 * 60 * 60,
             path: '/',

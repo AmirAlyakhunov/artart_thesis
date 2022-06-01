@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Loader from "../../Components/Loader/loader";
 import PartsHeader from "../../Components/PartsHeader/partsHeader";
 import {useCookies} from "react-cookie";
-import PostGetData from "../../API/postGetData";
+import ApiData from "../../API/apiData";
 import ArtistCard from "../Home/GeneralParts/Body/Artists/ArtistCard/artistCard";
 import Button from "../../Components/Button/button";
 
@@ -17,11 +17,11 @@ const ArtistsFull = () => {
     async function fetchPerson(){
         setIsLoading(true);
         if(!cookies.access_token){
-            const response = await PostGetData.getAllPersons()
+            const response = await ApiData.getAllPersons()
             setPosts(response.data['persons'])
         }
         else{
-            const response = await PostGetData.getAllPersons(cookies.access_token)
+            const response = await ApiData.getAllPersons(cookies.access_token)
             setPosts(response.data['persons'])
         }
         setIsLoading(false);

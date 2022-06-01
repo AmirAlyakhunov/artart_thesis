@@ -9,7 +9,7 @@ fpPromise
     .then(fp => fp.get())
     .then(result => {fpJs = result.visitorId})
 
-export default class PostGetData {
+export default class ApiData {
 
     static async getById(id, accessToken = null) {
         if(accessToken)

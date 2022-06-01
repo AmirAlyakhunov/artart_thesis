@@ -7,13 +7,13 @@ import MenuLink from "./menuLink/menuLink";
 import {useCookies} from "react-cookie";
 import Button from "../../Components/Button/button";
 import {useNavigate} from "react-router-dom";
-import PostGetData from "../../API/postGetData";
+import ApiData from "../../API/apiData";
 
 const MenuMobile = ({clickHandler}) => {
     const [cookies, setCookie, removeCookie]  = useCookies(['access_token', 'refresh_token']);
     const redirect = useNavigate();
     async function Logout(){
-        const response = await PostGetData.postLogout(cookies.access_token)
+        const response = await ApiData.postLogout(cookies.access_token)
         setCookie('access_token', response.data, {
             maxAge: 30 * 24 * 60 * 60,
             path: '/',

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './searchResultDesktop.css';
-import PostGetData from "../../API/postGetData";
+import ApiData from "../../API/apiData";
 import Loader from "../Loader/loader";
 import SearchResultRow from "../SearchResultRow/searchResultRow";
 import Button from "../Button/button";
@@ -19,7 +19,7 @@ const SearchResultDesktop = ({onClick, value, toClose}) => {
     }, []);
     async function fetchPerson(){
         setIsLoading(true);
-        const response = await PostGetData.getAllPersons()
+        const response = await ApiData.getAllPersons()
         setPosts(response.data['persons'])
         setIsLoading(false);
     }

@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react';
 import './artistArticle.css';
 import {useCookies} from 'react-cookie';
 import {useNavigate, useParams} from 'react-router-dom';
-import PostGetData from '../../API/postGetData';
+import ApiData from '../../API/apiData';
 import Loader from "../../Components/Loader/loader";
 import IconButton from "../../Components/IconButtons/iconButton";
 import {
@@ -35,21 +35,21 @@ const ArtistArticle = () => {
     async function Artist() {
         setIsLoading(true);
         if(!cookies.access_token){
-            const response = await PostGetData.getById(params.id)
+            const response = await ApiData.getById(params.id)
             setPost(response.data)
         }
         else{
-            const response = await PostGetData.getById(params.id, cookies.access_token)
+            const response = await ApiData.getById(params.id, cookies.access_token)
             setPost(response.data)
         }
         setIsLoading(false);
     }
     async function Works(){
-        const response = await PostGetData.getWorkById(params.id)
+        const response = await ApiData.getWorkById(params.id)
         setPostWorks(response.data['arts'])
     }
     async function setLike() {
-        const response = await PostGetData.postLike(cookies.access_token, post.id);
+        const response = await ApiData.postLike(cookies.access_token, post.id);
         setPost({...post,  likes: response.data.likes, liked: response.data.liked});
     }
     function CopyToClipboard() {

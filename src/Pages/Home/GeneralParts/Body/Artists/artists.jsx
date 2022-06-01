@@ -3,7 +3,7 @@ import './artists.css';
 import PartsHeader from '../../../../../Components/PartsHeader/partsHeader';
 import ArtistCard from './ArtistCard/artistCard';
 import Loader from '../../../../../Components/Loader/loader';
-import PostGetData from "../../../../../API/postGetData";
+import ApiData from "../../../../../API/apiData";
 import {useCookies} from "react-cookie";
 import Button from "../../../../../Components/Button/button";
 import {useNavigate} from "react-router-dom";
@@ -21,11 +21,11 @@ const Artists = () => {
     async function fetchPerson(){
         setIsLoading(true);
         if(!cookies.access_token){
-            const response = await PostGetData.getPersons()
+            const response = await ApiData.getPersons()
             setPosts(response.data['persons'])
         }
         else{
-            const response = await PostGetData.getPersons(cookies.access_token)
+            const response = await ApiData.getPersons(cookies.access_token)
             setPosts(response.data['persons'])
         }
         setIsLoading(false);

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './eventArticle.css';
 import {useParams} from "react-router-dom";
-import PostGetData from "../../API/postGetData";
+import ApiData from "../../API/apiData";
 import Loader from "../../Components/Loader/loader";
 import ScrollToTop from "../../ScrollFunction/scrollToTop";
 
@@ -16,7 +16,7 @@ const EventArticle = () => {
 
     async function fetchEvent() {
         setIsLoading(true);
-        const response = await PostGetData.getEventById(params.id)
+        const response = await ApiData.getEventById(params.id)
         setPost(response.data)
         setIsLoading(false);
     }

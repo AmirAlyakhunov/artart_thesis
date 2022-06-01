@@ -5,7 +5,7 @@ import {CloseIcon, EmojiGhost, EmojiSadIcon, SearchIcon} from "../../../Assets/v
 import Field from "../../Field/field";
 import Loader from "../../Loader/loader";
 import SearchResultRow from "../../SearchResultRow/searchResultRow";
-import PostGetData from "../../../API/postGetData";
+import ApiData from "../../../API/apiData";
 
 const SearchResultMobile = ({clickHandler}) => {
     const [posts, setPosts] = useState([]);
@@ -21,7 +21,7 @@ const SearchResultMobile = ({clickHandler}) => {
     }, []);
     async function fetchPerson(){
         setIsLoading(true);
-        const response = await PostGetData.getAllPersons()
+        const response = await ApiData.getAllPersons()
         setPosts(response.data['persons'])
         setIsLoading(false);
     }

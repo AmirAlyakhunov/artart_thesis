@@ -3,7 +3,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import './profile.css';
 import {Buffer} from 'buffer';
 import {useCookies} from "react-cookie";
-import PostGetData from "../../API/postGetData";
+import ApiData from "../../API/apiData";
 import Button from "../../Components/Button/button";
 import PartsHeader from "../../Components/PartsHeader/partsHeader";
 import ArtistCard from "../Home/GeneralParts/Body/Artists/ArtistCard/artistCard";
@@ -30,11 +30,11 @@ const Profile = () => {
         let newDate = new Date(expDate.exp * 1000);
         let today = new Date()
         if (today < newDate) {
-            const response = await PostGetData.getUser(cookies.access_token)
+            const response = await ApiData.getUser(cookies.access_token)
             setUser(response.data)
         }
         else {
-            const response = await PostGetData.postRefresh(cookies.refresh_token)
+            const response = await ApiData.postRefresh(cookies.refresh_token)
             setCookie('access_token', response.data.accessToken, {
                 maxAge: 30 * 24 * 60 * 60,
                 path: '/',
@@ -48,7 +48,7 @@ const Profile = () => {
     }
 
     async function LikedArtist() {
-        const response = await PostGetData.getLikedArtist(cookies.access_token)
+        const response = await ApiData.getLikedArtist(cookies.access_token)
         setFavPerson(response?.data)
     }
 
