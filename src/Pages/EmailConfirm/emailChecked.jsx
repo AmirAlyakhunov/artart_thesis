@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import ApiData from "../../API/apiData";
-import Loader from "../../Components/Loader/loader";
 import SuccessWin from "../../Components/SuccessResetWin/successWin";
 
 const EmailChecked = () => {

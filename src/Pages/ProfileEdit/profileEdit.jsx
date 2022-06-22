@@ -99,8 +99,8 @@ const ProfileEdit = () => {
         }
         else{
             if (user.userpic === 'https://storage.yandexcloud.net/artart/userpic/userpic.png'){
-                await ApiData.deleteUserPic(cookies.access_token);
-                redirect ('/user/me')
+                const response = await ApiData.deleteUserPic(cookies.access_token);
+                if (response.status == 200) redirect ('/user/me')
             }
         }
     }
